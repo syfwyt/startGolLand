@@ -56,11 +56,11 @@ func TestDB() error {
 	}
 
 	tmpDns := fmt.Sprintf("%s:%s@tcp(%s:%s)/?charset=%s&parseTime=True&loc=Local",
-		mysqlConfig["user"],
-		mysqlConfig["password"],
-		mysqlConfig["host"],
-		mysqlConfig["port"],
-		mysqlConfig["charset"])
+		mysqlConfig["root"],
+		mysqlConfig["123456"],
+		mysqlConfig["192.168.5.94"],
+		mysqlConfig["3306"],
+		mysqlConfig["stkdata"])
 	egnine, err := xorm.NewEngine("mysql", tmpDns)
 	if err != nil {
 		fmt.Println("new engine error:", err)
